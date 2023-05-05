@@ -182,7 +182,7 @@ https://casbin.org/docs/tutorials
     ```
 
 Note: you can also initialize an enforcer with policy in DB instead of file,
-see [Policy-persistence](#policy-persistence) section for details.
+see [Policy-persistence](#policy-persistence) section for details. 
 
 2. Add an enforcement hook into your code right before the access happens:
 
