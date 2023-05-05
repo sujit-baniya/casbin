@@ -21,7 +21,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Knetic/govaluate"
+	"github.com/oarkflow/govaluate"
+
 	"github.com/casbin/casbin/v2/effector"
 	"github.com/casbin/casbin/v2/log"
 	"github.com/casbin/casbin/v2/model"
@@ -642,9 +643,9 @@ func (e *Enforcer) enforce(matcher string, explains *[]string, rvals ...interfac
 				policyEffects[policyIndex] = effector.Allow
 			}
 
-			//if e.model["e"]["e"].Value == "priority(p_eft) || deny" {
+			// if e.model["e"]["e"].Value == "priority(p_eft) || deny" {
 			//	break
-			//}
+			// }
 
 			effect, explainIndex, err = e.eft.MergeEffects(e.model["e"][eType].Value, policyEffects, matcherResults, policyIndex, policyLen)
 			if err != nil {

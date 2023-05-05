@@ -1,13 +1,13 @@
 name: Default
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: ['1.18', '1.19', '1.20']
+        go: [ '1.18', '1.19', '1.20' ]
     steps:
       - uses: actions/checkout@v2
 
@@ -17,13 +17,13 @@ jobs:
           go-version: ${{ matrix.go }}
 
       - name: Run go test
-        run:  make test
+        run: make test
 
   benchmark:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: ['1.18', '1.19', '1.20']
+        go: [ '1.18', '1.19', '1.20' ]
     steps:
       - uses: actions/checkout@v2
 
@@ -33,7 +33,7 @@ jobs:
           go-version: ${{ matrix.go }}
 
       - name: Run go test bench
-        run:  make benchmark
+        run: make benchmark
 
   lint:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
           version: v1.51
 
   semantic-release:
-    needs: [test, lint]
+    needs: [ test, lint ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

@@ -19,7 +19,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Knetic/govaluate"
+	"github.com/oarkflow/govaluate"
+
 	"github.com/casbin/casbin/v2/util"
 )
 

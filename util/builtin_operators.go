@@ -23,7 +23,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Knetic/govaluate"
+	"github.com/oarkflow/govaluate"
+
 	"github.com/casbin/casbin/v2/rbac"
 )
 
@@ -273,7 +274,7 @@ func KeyMatch4Func(args ...interface{}) (interface{}, error) {
 }
 
 // KeyMatch5 determines whether key1 matches the pattern of key2 (similar to RESTful path), key2 can contain a *
-// For example, 
+// For example,
 // - "/foo/bar?status=1&type=2" matches "/foo/bar"
 // - "/parent/child1" and "/parent/child1" matches "/parent/*"
 // - "/parent/child1?status=1" matches "/parent/*"
