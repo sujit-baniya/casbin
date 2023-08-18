@@ -15,12 +15,11 @@
 package casbin
 
 import (
+	"github.com/casbin/casbin/v2/errors"
+	"github.com/casbin/casbin/v2/util"
 	"sort"
 	"testing"
 	"time"
-
-	"github.com/casbin/casbin/v2/errors"
-	"github.com/casbin/casbin/v2/util"
 )
 
 func testEnforceSync(t *testing.T, e *SyncedEnforcer, sub string, obj interface{}, act string, res bool) {
@@ -478,7 +477,7 @@ func testSyncedEnforcerGetUsers(t *testing.T, e *SyncedEnforcer, res []string, n
 	switch err {
 	case nil:
 		break
-	case errors.ERR_NAME_NOT_FOUND:
+	case errors.ErrNameNotFound:
 		t.Log("No name found")
 	default:
 		t.Error("Users for ", name, " could not be fetched: ", err.Error())
